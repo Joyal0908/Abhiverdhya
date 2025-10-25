@@ -38,56 +38,70 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Handle card flipping
+    // Card flip functionality for mobile devices
     const isMobile = () => window.innerWidth <= 992;
     let activeCard = null;
 
-    // Function to unflip active card
-    const unflipActiveCard = () => {
-        if (activeCard) {
+    // Handle card interactions
+    document.querySelectorAll('.flip-card').forEach(card => {
+        const cardInner = card.querySelector('.flip-card-inner');
+        const frontFace = card.querySelector('.flip-card-front');
+        const backFace = card.querySelector('.flip-card-back');
+
+        function unflipCard() {
+            cardInner.classList.remove('flipped');
+            if (activeCard === cardInner) {
+                activeCard = null;
+            }
+        }
+
+        function flipCard() {
+            // Close any other open card first
+            if (activeCard && activeCard !== cardInner) {
+                activeCard.classList.remove('flipped');
+            }
+            cardInner.classList.add('flipped');
+            activeCard = cardInner;
+        }
+
+        // Handle tap to flip (front face)
+        frontFace.addEventListener('click', function(e) {
+            if (!isMobile()) return;
+            e.preventDefault();
+            e.stopPropagation();
+            flipCard();
+        });
+
+        // Handle tap to return (back face)
+        backFace.addEventListener('click', function(e) {
+            if (!isMobile()) return;
+            e.preventDefault();
+            e.stopPropagation();
+            unflipCard();
+        });
+
+        // Touch events
+        frontFace.addEventListener('touchstart', function(e) {
+            if (!isMobile()) return;
+            e.preventDefault();
+            e.stopPropagation();
+            flipCard();
+        }, { passive: false });
+
+        backFace.addEventListener('touchstart', function(e) {
+            if (!isMobile()) return;
+            e.preventDefault();
+            e.stopPropagation();
+            unflipCard();
+        }, { passive: false });
+    });
+
+    // Handle clicks outside cards
+    document.addEventListener('click', function(e) {
+        if (!isMobile() || !activeCard) return;
+        if (!e.target.closest('.flip-card')) {
             activeCard.classList.remove('flipped');
             activeCard = null;
         }
-    };
-
-    // Handle clicks outside cards
-    document.addEventListener('click', (e) => {
-        if (isMobile() && !e.target.closest('.flip-card')) {
-            unflipActiveCard();
-        }
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        const wasMobile = activeCard !== null;
-        if (wasMobile && !isMobile()) {
-            unflipActiveCard(); // Clean up when switching to desktop
-        }
-    });
-
-    // Add flip card interactions
-    document.querySelectorAll('.flip-card').forEach(card => {
-        const cardInner = card.querySelector('.flip-card-inner');
-        
-        const handleInteraction = (e) => {
-            if (!isMobile()) return; // Let CSS handle desktop hover
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const isClickingActiveCard = activeCard === cardInner;
-            
-            // Always unflip any currently flipped card
-            unflipActiveCard();
-            
-            // If we didn't click the active card, flip the new one
-            if (!isClickingActiveCard) {
-                cardInner.classList.add('flipped');
-                activeCard = cardInner;
-            }
-        };
-
-        // Add both touch and click handlers for mobile
-        card.addEventListener('touchstart', handleInteraction, { passive: false });
-        card.addEventListener('click', handleInteraction);
     });
 });
