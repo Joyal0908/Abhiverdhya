@@ -1,0 +1,129 @@
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Orbit Loader */
+.orbit-loader {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.orbit {
+  position: absolute;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  animation: rotate 3s linear infinite;
+}
+
+.orbit:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  border-top-color: #ff3e3e; /* Red */
+  animation-delay: 0.1s;
+}
+
+.orbit:nth-child(2) {
+  width: 70%;
+  height: 70%;
+  top: 15%;
+  left: 15%;
+  border-top-color: #3eff3e; /* Green */
+  animation-delay: 0.2s;
+  animation-direction: reverse;
+}
+
+.orbit:nth-child(3) {
+  width: 40%;
+  height: 40%;
+  top: 30%;
+  left: 30%;
+  border-top-color: #3e9cff; /* Blue */
+  animation-delay: 0.3s;
+}
+
+/* Loading Text */
+.loading-text {
+  position: absolute;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Main Content */
+.main-content {
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.main-content.visible {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .orbit-loader {
+    width: 120px;
+    height: 120px;
+  }
+
+  .loading-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .orbit-loader {
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABHIVERDHYA INDUSTRY | Premium Plastic Manufacturing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .slider-container {
+            width: 80%;
+            max-width: 1200px;
+            position: relative;
+            margin: 100px auto 10px auto;
+            background: url('images/manufacturing/EPIG0497.avif') no-repeat center center fixed;
+            background-size: cover;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .glass-slider {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 40px;
+            overflow: hidden;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 350px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: white;
+            background: transparent;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+            width: 12px;
+            height: 12px;
+            margin: 0 8px !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: white;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 5px;
+            font-size: 18px;
+        }
+
+        @media (max-width: 576px) {
+            .glass-slider {
+                padding: 20px !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="orbit-loader">
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="loading-text">Loading..</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/Abhiverdhya Logo Audit.avif" alt="Prime Polymers" height="60"
+                    class="d-inline-block align-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                id="navToggle">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="electronic.html">Find Your Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="https://www.google.com/maps/place/Abhiverdhya+Industries+Pvt.+Ltd./@12.7399596,77.8259369,16z/data=!3m1!4b1!4m6!3m5!1s0x3bae7151fb0e44a5:0x43347abd4ecbdd43!8m2!3d12.7399596!4d77.8259369!16s%2Fg%2F11wttqx8xl?entry=ttu&g_ep=EgoyMDI1MDYyNi4wIKXMDSoASAFQAw%3D%3D">
+                            <i class="fa-solid fa-location-dot fa-flip-horizontal p-2 mt-1" style="color: #646363;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <ul class="offcanvas-nav" id="navbarLinks">
+        <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="electronic.html">Find Your Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a
+                href="https://www.google.com/maps/place/Abhiverdhya+Industries+Pvt.+Ltd./@12.7399596,77.8259369,16z/data=!3m1!4b1!4m6!3m5!1s0x3bae7151fb0e44a5:0x43347abd4ecbdd43!8m2!3d12.7399596!4d77.8259369!16s%2Fg%2F11wttqx8xl?entry=ttu&g_ep=EgoyMDI1MDYyNi4wIKXMDSoASAFQAw%3D%3D">
+                <i class="fa-solid fa-location-dot fa-flip-horizontal p-2 mt-1"></i>
+            </a>
+        </li>
+    </ul>
+
+    <!-- Contact Form Popup -->
+    <div class="popup-overlay" id="contactPopup">
+        <div class="contact-popup">
+            <button class="close-btn" id="closePopup">&times;</button>
+            <div class="row p-2">
+                <div class="col-md-6">
+                    <form id="contactForm1">
+                        <p>we are here to help with your plastic packaging needs.</p>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select form-control form-control-custom" id="productType" required>
+                                <option value="" selected disabled>Select product type</option>
+                                <option value="automobile">Automobile and Aerospace</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="consumer">Food Industries</option>
+                                <option value="garments">Garments and Apparels</option>
+                                <option value="jewellery">Jewellery and Watches</option>
+                                <option value="mattress">Mattress</option>
+                                <option value="custom">Custom Manufacturing</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a product type.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button type="submit" class="btn btn-send animate-pulse">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 mt-4">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Plot.No.22, First Floor, New Industrial
+                                Estate(Sidco), Behind Hotel Anand Bhavan, Hosur - 635109</p>
+                            <p><i class="fas fa-phone"></i> +91 63827 71386 | +91 63801 53040</p>
+                            <p><i class="fas fa-envelope"></i> admin@abhiverdhya.com</p>
+                        </div>
+                        <div class="social-icons justify-content-center">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Carousel -->
+    <section id="home" class="hero-carousel">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000"
+            data-bs-wrap="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/manufacturing/EPIG0508.avif" class="d-block w-100" alt="Premium Plastic Solutions">
+                    <div class="carousel-caption animate__animated animate__fadeInUp p-5">
+                        <h1 class="display-4 fw-bold">Innovative Polymer Solutions</h1>
+                        <p class="lead">Cutting-edge plastic packaging manufacturer with 30+ years of industry expertise
+                        </p>
+                        <a href="contact.html" class="btn btn-primary btn-lg mt-3 pulse-animation">Get a Quote</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/manufacturing/EPIG0497.avif" class="d-block w-100" alt="Eco-Friendly Options">
+                    <div class="carousel-caption animate__animated animate__fadeInUp p-5">
+                        <h1 class="display-4 fw-bold">Sustainable Packaging</h1>
+                        <p class="lead">100% Recyclable & De-composible packing solutions for a greener tomorrow</p>
+                        <a href="products.html" class="btn btn-primary btn-lg mt-3 pulse-animation">View Products</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/manufacturing/EPIG0509.avif" class="d-block w-100" alt="Custom Manufacturing">
+                    <div class="carousel-caption animate__animated animate__fadeInUp p-5">
+                        <h1 class="display-4 fw-bold">Custom Manufacturing</h1>
+                        <p class="lead">Tailored packaging products to meet your exact specifications</p>
+                        <a href="contact.html" class="btn btn-primary btn-lg mt-3 pulse-animation">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Product Slide -->
+    <div class="slider-container">
+
+        <div class="glass-slider">
+            <div class="swiper">
+                <div class="swiper-wrapper col-lg-12 col-md-10 col-6">
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/bottle.avif" alt="Product 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Baby Bed Cover.avif" alt="Product 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Battery Cover.avif" alt="Product 3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Bread Pack Cover.avif" alt="Product 4">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Carry Bags like Cover.avif" alt="Product 5">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Cart Board Inside Cover.avif" alt="Product 6">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Chair Covers.avif" alt="Product 7">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Children Hook Bag.avif" alt="Product 8">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Flower Cover.avif" alt="Product 9">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Laptop Covers.avif" alt="Product 10">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Milk & Coconut Covers.avif" alt="Product 11">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Orange Covers.avif" alt="Product 12">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Toy Covers.avif" alt="Product 13">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/EPIG0418.avif" alt="Product 14">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/Vegetables Cover.avif" alt="Product 15">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/strap.avif" alt="Product 16">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/tools.avif" alt="Product 17">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/cover.avif" alt="Product 18">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/prod01.avif" alt="Product 19">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/prod03.avif" alt="Product 20">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/ldpe-printed-rolls-02.avif" alt="Product 21">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/2.avif" alt="Product 22">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/3.avif" alt="Product 23">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/4.avif" alt="Product 24">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/5.avif" alt="Product 25">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/6.avif" alt="Product 26">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/7.avif" alt="Product 27">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/8.avif" alt="Product 28">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/Abhi/ldpe-slider-zipper-bags-737.avif" alt="Product 29">
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Industry Applications -->
+    <section id="applications" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="fw-bold">Industry Applications</h2>
+                <p class="text-muted">Our products serve diverse industries with specialized solutions</p>
+            </div>
+
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="application-card p-4 rounded shadow-sm hover-scale">
+                        <div class="icon-wrapper mb-3 rotate-icon">
+                            <i class="fas fa-utensils fa-3x text-primary"></i>
+                        </div>
+                        <h5>Food Industry</h5>
+                        <p class="text-muted small">Hygienic, food-safe packaging solutions</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="application-card p-4 rounded shadow-sm hover-scale">
+                        <div class="icon-wrapper mb-3 rotate-icon">
+                            <i class="fas fa-pills fa-3x text-primary"></i>
+                        </div>
+                        <h5>Pharmaceutical</h5>
+                        <p class="text-muted small">Medical-grade plastic containers</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="application-card p-4 rounded shadow-sm hover-scale">
+                        <div class="icon-wrapper mb-3 rotate-icon">
+                            <i class="fas fa-shopping-bag fa-3x text-primary"></i>
+                        </div>
+                        <h5>Retail</h5>
+                        <p class="text-muted small">Attractive, durable packaging</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="application-card p-4 rounded shadow-sm hover-scale">
+                        <div class="icon-wrapper mb-3 rotate-icon">
+                            <i class="fas fa-industry fa-3x text-primary"></i>
+                        </div>
+                        <h5>Industrial</h5>
+                        <p class="text-muted small">Heavy-duty plastic components</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Process -->
+    <section id="manufacturing" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="fw-bold">Manufacturing Excellence</h2>
+                <p class="text-muted">Precision engineering meets stringent quality standards</p>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="video-wrapper rounded shadow hover-glow">
+                        <!-- Replaced img with video tag -->
+                        <video id="manufacturingVideo" class="img-fluid rounded" autoplay muted loop>
+                            <!-- Replace with your actual video source -->
+                            <source src="images/Abhiverdhya Manufacturing Video for Website.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div id="playButton" class="play-button pulse-animation">
+                            <i class="fas fa-pause"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="process-steps">
+                        <div class="process-step mb-4">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>Material Selection</h5>
+                                <p>We source premium raw materials from certified global suppliers.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step mb-4">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>Blown Film Extrusion</h5>
+                                <p>Melts and stretches plastic to make thin films like bags.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step mb-4">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>Quality Assurance</h5>
+                                <p>Rigorous testing at multiple production stages.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h5>Packaging & Delivery</h5>
+                                <p>Secure packaging with on-time logistics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="fw-bold">Contact Us</h2>
+                <p class="text-muted">Get in touch for inquiries or quotes</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="card shadow-sm hover-float">
+                        <div class="card-body contact p-4">
+                            <p class="msg">we are here to help with your plastic packaging needs.</p>
+                            <h4 class="mb-4">Send us a message</h4>
+                            <form id="contactForm" novalidate>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control custom-placeholder" id="name"
+                                        placeholder="Your Name" required minlength="2" pattern="[A-Za-z ]+"
+                                        title="Please enter a valid name (letters only)">
+                                    <div class="invalid-feedback">Please provide a valid name (at least 2 letters)</div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control custom-placeholder" id="email"
+                                        placeholder="Email Address" required
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        title="Please enter a valid email address">
+                                    <div class="invalid-feedback">Please provide a valid email address</div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control custom-placeholder" id="phone"
+                                        placeholder="Phone Number (10 digits)" required pattern="^[\d\s\-\(\)]{10,15}$"
+                                        title="Please enter a valid phone number (10-15 digits)">
+                                    <div class="invalid-feedback">Please provide a valid phone number (10-15 digits)
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="productType" class="form-label">Product Type</label>
+                                    <select class="form-select form-control form-control-custom custom-placeholder"
+                                        id="productType" required>
+                                        <option value="" selected disabled>Select product type</option>
+                                        <option value="automobile">Automobile and Aerospace</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="consumer">Food Industries</option>
+                                        <option value="garments">Garments and Apparels</option>
+                                        <option value="jewellery">Jewellery and Watches</option>
+                                        <option value="mattress">Mattress</option>
+                                        <option value="custom">Custom Manufacturing</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a product type.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control custom-placeholder" id="message" rows="4"
+                                        placeholder="Your Message" required minlength="10"></textarea>
+                                    <div class="invalid-feedback">Please write a message (at least 10 characters)</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100 animate-pulse mt-3"
+                                    id="submitBtn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card shadow-sm hover-float h-100">
+                        <div class="card-body contact p-4">
+                            <h4 class="mb-4">Our Information</h4>
+                            <div class="contact-info mb-4">
+                                <div class="d-flex mb-3">
+                                    <i class="fas fa-map-marker-alt text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h5>Head Office</h5>
+                                        <p class="mb-0">Plot.No.22, First Floor, New Industrial Estate(Sidco), Behind Hotel Anand Bhavan, Hosur - 635109</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mb-3">
+                                    <i class="fas fa-phone-alt text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h5>Phone</h5>
+                                        <p class="mb-0">+91 63827 71386 | +91 63801 53040</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mb-4">
+                                    <i class="fas fa-envelope text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h5>Email</h5>
+                                        <p class="mb-0">admin@abhiverdhya.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="map-container mb-4 rounded overflow-hidden">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.036118143602!2d72.8345603149011!3d19.06498768709538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8df0e7f3a0d%3A0x29a7e7676f3c0a9d!2sIndustrial%20Estate!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                                    width="100%" height="200" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </div>
+
+                            <div class="whatsapp-button text-center">
+                                <a href="https://wa.me/9442102077" class="btn btn-success btn-lg animate-pulse">
+                                    <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary back-to-top" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <a href="index.html"><img src="images/Abhiverdhya Logo Audit.avif" alt="Prime Polymers" height="40"
+                            class="mb-3"></a>
+                    <p>Leading plastic packaging manufacturer with 30+ years of experience delivering high-quality,
+                        sustainable solutions.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3 hover-rotate"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3 hover-rotate"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3 hover-rotate"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white hover-rotate"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white">Products</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-white">Gallery</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="automobile.html" class="text-white">Automobile and Aerospace</a></li>
+                        <li class="mb-2"><a href="electronic.html" class="text-white">Electronics</a></li>
+                        <li class="mb-2"><a href="food.html" class="text-white">Food Industries</a></li>
+                        <li class="mb-2"><a href="garment.html" class="text-white">Garments and Apparels</a></li>
+                        <li class="mb-2"><a href="jewellery.html" class="text-white">Jewellery and Watches</a></li>
+                        <li><a href="electronic.html" class="text-white">View All</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4 bg-secondary">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">&copy; 2025 ABHIVERDHYA INDUSTRIES. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">Powered by <a href="https://arka.org.in/index.php" class="text-primary">Arka
+                            Technologies</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/loading.js"></script>
+
+</body>
+
+</html>

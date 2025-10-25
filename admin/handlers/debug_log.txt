@@ -1,0 +1,6 @@
+Array
+(
+    [action] => update_status
+    [id] => 1
+    [status] => read
+)
