@@ -38,70 +38,87 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Card flip functionality for mobile devices
-    const isMobile = () => window.innerWidth <= 992;
-    let activeCard = null;
+    // Add touch support for mobile devices
+    // document.querySelectorAll('.flip-card').forEach(card => {
+    //     card.addEventListener('touchstart', function () {
+    //         this.querySelector('.flip-card-inner').classList.toggle('flipped');
+    //     });
+    // });
 
-    // Handle card interactions
-    document.querySelectorAll('.flip-card').forEach(card => {
-        const cardInner = card.querySelector('.flip-card-inner');
-        const frontFace = card.querySelector('.flip-card-front');
-        const backFace = card.querySelector('.flip-card-back');
+    // Optional: Add click support for desktop if hover isn't enough
+    // document.querySelectorAll('.flip-card').forEach(card => {
+    //     card.addEventListener('click', function () {
+    //         this.querySelector('.flip-card-inner').classList.toggle('flipped');
+    //     });
+    // });
+});
 
-        function unflipCard() {
-            cardInner.classList.remove('flipped');
-            if (activeCard === cardInner) {
-                activeCard = null;
-            }
-        }
 
-        function flipCard() {
-            // Close any other open card first
-            if (activeCard && activeCard !== cardInner) {
-                activeCard.classList.remove('flipped');
-            }
-            cardInner.classList.add('flipped');
-            activeCard = cardInner;
-        }
-
-        // Handle tap to flip (front face)
-        frontFace.addEventListener('click', function(e) {
-            if (!isMobile()) return;
-            e.preventDefault();
-            e.stopPropagation();
-            flipCard();
-        });
-
-        // Handle tap to return (back face)
-        backFace.addEventListener('click', function(e) {
-            if (!isMobile()) return;
-            e.preventDefault();
-            e.stopPropagation();
-            unflipCard();
-        });
-
-        // Touch events
-        frontFace.addEventListener('touchstart', function(e) {
-            if (!isMobile()) return;
-            e.preventDefault();
-            e.stopPropagation();
-            flipCard();
-        }, { passive: false });
-
-        backFace.addEventListener('touchstart', function(e) {
-            if (!isMobile()) return;
-            e.preventDefault();
-            e.stopPropagation();
-            unflipCard();
-        }, { passive: false });
+document.addEventListener('DOMContentLoaded', function () {
+    // Staggered animation delay
+    const cards = document.querySelectorAll('.fade-in');
+    cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
     });
 
-    // Handle clicks outside cards
-    document.addEventListener('click', function(e) {
-        if (!isMobile() || !activeCard) return;
-        if (!e.target.closest('.flip-card')) {
-            activeCard.classList.remove('flipped');
-            activeCard = null;
+    // Card flip functionality
+    const flipCards = document.querySelectorAll('.flip-card');
+    let currentlyFlipped = null;
+
+    function handleCardFlip(card) {
+        // If clicking the currently flipped card, just unflip it
+        if (card === currentlyFlipped) {
+            card.classList.remove('flipped');
+            currentlyFlipped = null;
+            return;
         }
+
+        // If another card is flipped, unflip it
+        if (currentlyFlipped) {
+            currentlyFlipped.classList.remove('flipped');
+        }
+
+        // Flip the clicked card and update the reference
+        card.classList.add('flipped');
+        currentlyFlipped = card;
+    }
+
+    // Attach click listeners to all cards but act only on mobile sizes
+    flipCards.forEach(card => {
+        card.addEventListener('click', function (e) {
+            // Only handle taps/clicks for mobile widths
+            if (!window.matchMedia("(max-width: 992px)").matches) return;
+            handleCardFlip(this);
+        });
+
+        // On desktop, hovering is handled by CSS, but when mouseenter occurs
+        // ensure any programmatically flipped card is reset.
+        card.addEventListener('mouseenter', function () {
+            if (window.matchMedia("(max-width: 992px)").matches) return;
+            if (currentlyFlipped) {
+                currentlyFlipped.classList.remove('flipped');
+                currentlyFlipped = null;
+            }
+        });
+    });
+
+    // Close flipped card when clicking/tapping outside any .flip-card
+    document.addEventListener('click', function (e) {
+        if (!currentlyFlipped) return;
+        // If the click is inside any .flip-card, ignore (card handlers manage it)
+        if (e.target.closest('.flip-card')) return;
+        currentlyFlipped.classList.remove('flipped');
+        currentlyFlipped = null;
+    });
+
+    // On resize, if layout changes between mobile/desktop, clear any flipped card
+    let lastIsMobile = window.matchMedia("(max-width: 992px)").matches;
+    window.addEventListener('resize', function () {
+        const nowMobile = window.matchMedia("(max-width: 992px)").matches;
+        if (nowMobile !== lastIsMobile && currentlyFlipped) {
+            currentlyFlipped.classList.remove('flipped');
+            currentlyFlipped = null;
+        }
+        lastIsMobile = nowMobile;
     });
 });

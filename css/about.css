@@ -51,12 +51,10 @@ body {
   position: absolute;
   width: 80px;
   height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--primary),
-    var(--white),
-    var(--green)
-  );
+  background: linear-gradient(90deg,
+      var(--primary),
+      var(--white),
+      var(--green));
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
@@ -124,9 +122,18 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* JavaScript-controlled flip */
-.flip-card-inner.flipped {
-  transform: rotateY(180deg);
+/* Hover effect only for desktop/laptop */
+@media (min-width: 993px) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Click effect for mobile and flipped state */
+@media (max-width: 992px) {
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
 .flip-card-front,
@@ -191,10 +198,6 @@ body {
   .flip-hint {
     visibility: visible;
   }
-
-  .flip-card-inner.flipped {
-    transform: rotateY(180deg);
-  }
 }
 
 @media (max-width: 768px) {
@@ -210,10 +213,6 @@ body {
   .flip-hint {
     visibility: visible;
   }
-
-  .flip-card-inner.flipped {
-    transform: rotateY(180deg);
-  }
 }
 
 @media (max-width: 576px) {
@@ -225,7 +224,7 @@ body {
     visibility: visible;
   }
 
-  .flip-card-inner.flipped {
+  .flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
   }
 }
@@ -304,17 +303,18 @@ body {
 
 /* Benefits List */
 .benefits-list {
-  background: linear-gradient(
-    135deg,
-    rgba(13, 110, 253, 0.05) 0%,
-    rgba(25, 135, 84, 0.05) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(13, 110, 253, 0.05) 0%,
+      rgba(25, 135, 84, 0.05) 100%);
 }
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+
   .about-section,
-  .mission-vision {
+  .mission-vision{
     padding: 60px 0;
   }
 
