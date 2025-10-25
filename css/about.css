@@ -129,6 +129,17 @@ body {
   transform: rotateY(180deg);
 }
 
+/* Explicitly disable hover effects on mobile */
+@media (max-width: 992px) {
+  .flip-card:hover .flip-card-inner {
+    transform: none;
+  }
+  
+  .flip-card-inner:hover {
+    transform: none;
+  }
+}
+
 /* Hover effect only for desktop */
 @media (min-width: 993px) {
   .flip-card:hover .flip-card-inner {
